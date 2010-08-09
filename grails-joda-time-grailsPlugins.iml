@@ -2,6 +2,7 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
+    <content url="file://$USER_HOME_GRAILS$/1.3.3/projects/grails-joda-time/plugins/hibernate-1.3.3" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
@@ -17,7 +18,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" scope="PROVIDED" name="grails-1.3.3" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="joda-time" level="project" />
   </component>
 </module>
 

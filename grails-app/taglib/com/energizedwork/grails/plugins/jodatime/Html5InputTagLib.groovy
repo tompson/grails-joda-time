@@ -17,6 +17,7 @@
 package com.energizedwork.grails.plugins.jodatime
 
 import org.codehaus.groovy.grails.plugins.web.taglib.FormTagLib
+import static com.energizedwork.grails.plugins.jodatime.Html5DateTimeFormat.*
 
 class Html5InputTagLib {
 
@@ -28,7 +29,7 @@ class Html5InputTagLib {
 		attrs.type = "date"
 		attrs.tagName = "dateField"
 		if (attrs.value) {
-			attrs.value = attrs.value.toString("yyyy-MM-dd")
+			attrs.value = date().print(attrs.value)
 		}
 		formTagLib.fieldImpl(out, attrs)
 	}
@@ -37,7 +38,43 @@ class Html5InputTagLib {
 		attrs.type = "time"
 		attrs.tagName = "timeField"
 		if (attrs.value) {
-			attrs.value = attrs.value.toString("HH:mm:ss")
+			attrs.value = time().print(attrs.value)
+		}
+		formTagLib.fieldImpl(out, attrs)
+	}
+
+	def datetimeField = {attrs ->
+		attrs.type = "datetime"
+		attrs.tagName = "datetimeField"
+		if (attrs.value) {
+			attrs.value = datetime().print(attrs.value)
+		}
+		formTagLib.fieldImpl(out, attrs)
+	}
+
+	def datetimeLocalField = {attrs ->
+		attrs.type = "datetime-local"
+		attrs.tagName = "datetimeLocalField"
+		if (attrs.value) {
+			attrs.value = datetimeLocal().print(attrs.value)
+		}
+		formTagLib.fieldImpl(out, attrs)
+	}
+
+	def monthField = {attrs ->
+		attrs.type = "month"
+		attrs.tagName = "monthField"
+		if (attrs.value) {
+			attrs.value = month().print(attrs.value)
+		}
+		formTagLib.fieldImpl(out, attrs)
+	}
+
+	def weekField = {attrs ->
+		attrs.type = "week"
+		attrs.tagName = "weekField"
+		if (attrs.value) {
+			attrs.value = week().print(attrs.value)
 		}
 		formTagLib.fieldImpl(out, attrs)
 	}
