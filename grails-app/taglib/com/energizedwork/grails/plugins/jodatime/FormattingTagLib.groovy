@@ -31,6 +31,9 @@ class FormattingTagLib {
 		if (attrs.pattern && attrs.style) {
 			throwTagError('Cannot specify both pattern and style attributes')
 		}
+		if (attrs.value == null) {
+			return
+		}
 
 		def value = attrs.value ?: new DateTime()
 		def locale = attrs.locale ?: RequestContextUtils.getLocale(request)
